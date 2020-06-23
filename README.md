@@ -1,4 +1,4 @@
-##Game of Life: Teacher's Edition
+## Game of Life: Teacher's Edition
 
 An interactive website designed for new teachers to explore helpful topics and tips
 
