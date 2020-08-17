@@ -1,0 +1,58 @@
+.quote-container {
+  width: 450px;
+  height: auto;
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 40px;
+  bottom: 50px;
+
+  background-color: white;
+  color: #333;
+  border-left: 4px #333 solid;
+  border-radius: 3px;
+  padding: 1rem;
+
+  h2 {
+    font-style: italic;
+    font-size: 1.25em;
+
+    -webkit-animation: fadeIn 1s ease-in-out 1;
+    -moz-animation: fadeIn 1s ease-in-out 1;
+    -ms-animation: fadeIn 1s ease-in-out 1;
+    animation: fadeIn 1s ease-in-out 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

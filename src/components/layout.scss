@@ -12,3 +12,23 @@ footer {
   text-align: center;
   margin: 1rem auto;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff8dc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eae4c9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

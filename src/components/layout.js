@@ -27,11 +27,6 @@ const Layout = ({ children }) => {
   return (
     <>
     <main>{children}</main>
-    <footer>
-      © {new Date().getFullYear()}
-      {` `}
-      <a href="http://www.ilclassroomsinaction.org/">Illinois Classrooms In Action</a>
-    </footer>
     </>
   )
 }

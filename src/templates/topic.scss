@@ -1,0 +1,44 @@
+.topic__header {
+  height: 230px;
+  width: 100%;
+  // background-color: red;
+  // background-image: linear-gradient(to bottom right, #fff, #3499cc);
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .topic__title {
+    font-size: 2.5em;
+  }
+}
+
+.topic__wrapper {
+  width: 100vw;
+}
+.topic__content {
+  max-width: 960px;
+  margin: 60px auto;
+  color: #333;
+  line-height: 1.6em;
+  font-size: 1.25em;
+
+  img {
+    display: block;
+    margin: 60px auto;
+  }
+
+  p {
+    margin: 40px 0;
+  }
+}

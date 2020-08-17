@@ -3,46 +3,29 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-// import './topic.scss';
+import './topic.scss';
 
 const TopicTemplate = (props) => {
-    return (
-        <Layout>
-        {/* <SEO title={props.data.contentfulTopic.seoTitle} description={props.data.contentfulTopic.seoDescription} keywords={props.data.contentfulTopic.seoKeywords} /> */}
-
-
-        {/* <div className='project__header'>
-            
-            <div className='project__hero'>
-              <div className='project__desc'>            
-                <div dangerouslySetInnerHTML={
-                    {__html: `${props.data.contentfulProject.projectDescription.childMarkdownRemark.html}`}
-                } />
-              </div>
-              <h1 className='project__title'>{props.data.contentfulProject.pageTitle}</h1>
-            </div>
-            <HomeReturn />
-        </div>
-        <div id='project__wrapper'>
-            <div className='project__content'>
-                <div dangerouslySetInnerHTML={
-                    {__html: `${props.data.contentfulProject.content.childMarkdownRemark.html}`}
-                } />
-            </div>
-        </div> */}
-
-        <h1 className='project__title'>{props.data.contentfulTopic.pageTitle}</h1>
-
-        <div id='project__wrapper'>
-            <div className='project__content'>
-                <div dangerouslySetInnerHTML={
-                    {__html: `${props.data.contentfulTopic.pageContent.childMarkdownRemark.html}`}
-                } />
-            </div>
-        </div>
-        
-        </Layout>
-    )
+  return (
+    <Layout>
+      <SEO title={props.data.contentfulTopic.seoTitle} description={props.data.contentfulTopic.seoDescription} keywords={props.data.contentfulTopic.seoKeywords} />
+      <div className='topic__header'>  
+            <h1 className='topic__title'>{props.data.contentfulTopic.pageTitle}</h1>
+      </div>
+      <div id='topic__wrapper'>
+          <div className='topic__content'>
+              <div dangerouslySetInnerHTML={
+                  {__html: `${props.data.contentfulTopic.pageContent.childMarkdownRemark.html}`}
+              } />
+          </div>
+      </div>   
+      <footer>
+        © {new Date().getFullYear()}
+        {` `}
+        <a href="http://www.ilclassroomsinaction.org/">Illinois Classrooms In Action</a>
+      </footer>
+    </Layout>
+  )
 }
 
 export default TopicTemplate;
