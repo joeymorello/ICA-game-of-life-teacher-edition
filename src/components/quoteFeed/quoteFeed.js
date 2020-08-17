@@ -11,9 +11,12 @@ export default () => {
     useEffect(() => {
       const timer = setInterval(() => {
         getQuote(!quote);
-      }, 1000);
-                 // clearing interval
-      return () => clearInterval(timer);
+      }, 5000);
+      // clearing interval
+      return () => {
+        clearInterval(timer);
+        getQuote(!quote);
+      }
     });
 
   return (
