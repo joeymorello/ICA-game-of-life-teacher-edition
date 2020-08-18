@@ -1,6 +1,7 @@
 @import "../vars.scss";
 
 #topic-section {
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -19,13 +20,21 @@
 }
 
 .feed {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
 
-  margin-top: 11rem;
+  // margin-top: 11rem;
+
+  position: fixed;
+  top: 150px;
+  width: 100%;
 
   .topic__item {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+
     width: 250px;
     height: 300px;
     box-sizing: border-box;
@@ -74,7 +83,14 @@
   }
 
   .topic__item--stack {
+    width: 250px;
+    margin: 0 auto;
+
     list-style: none;
+
+    .top-card--stack {
+      background-image: url(../../images/card-bg.png);
+    }
 
     li {
       width: 250px;
@@ -131,7 +147,10 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-200px);
+    transform: translateY(-250px);
+  }
+  70% {
+    z-index: 7;
   }
   100% {
     transform: translateY(0px);
@@ -144,7 +163,10 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-200px);
+    transform: translateY(-250px);
+  }
+  70% {
+    z-index: 7;
   }
   100% {
     transform: translateY(0px);
@@ -157,7 +179,10 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-200px);
+    transform: translateY(-250px);
+  }
+  70% {
+    z-index: 7;
   }
   100% {
     transform: translateY(0px);
@@ -170,7 +195,10 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-200px);
+    transform: translateY(-250px);
+  }
+  70% {
+    z-index: 7;
   }
   100% {
     transform: translateY(0px);
@@ -180,78 +208,81 @@
 }
 
 // SPINNER
-.spin-wheel--container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
+.spin-wheel--wrapper {
+  position: fixed;
+  bottom: -200px;
+  width: 100%;
 
-  svg {
+  .spin-wheel--container {
     width: 400px;
-    height: 400px;
-    transition-duration: 2s;
+    margin: 0 auto;
 
-    &:hover {
-      cursor: pointer;
-      -ms-transform: rotate(-8deg);
-      -moz-transform: rotate(-8deg);
-      -webkit-transform: rotate(-8deg);
-      transform: rotate(-8deg);
-    }
-  }
+    svg {
+      width: 400px;
+      height: 400px;
+      transition-duration: 2s;
 
-  .spin-wheel--anim {
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 1000ms;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
+      &:hover {
+        cursor: pointer;
+        -ms-transform: rotate(-8deg);
+        -moz-transform: rotate(-8deg);
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+      }
+    }
 
-    -moz-animation-name: spin;
-    -moz-animation-duration: 1000ms;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
+    .spin-wheel--anim {
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 1000ms;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
 
-    -ms-animation-name: spin;
-    -ms-animation-duration: 1000ms;
-    -ms-animation-iteration-count: 1;
-    -ms-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
+      -moz-animation-name: spin;
+      -moz-animation-duration: 1000ms;
+      -moz-animation-iteration-count: 1;
+      -moz-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
 
-    animation-name: spin;
-    animation-duration: 1000ms;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
-  }
-  @-ms-keyframes spin {
-    from {
-      -ms-transform: rotate(0deg);
+      -ms-animation-name: spin;
+      -ms-animation-duration: 1000ms;
+      -ms-animation-iteration-count: 1;
+      -ms-animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
+
+      animation-name: spin;
+      animation-duration: 1000ms;
+      animation-iteration-count: 1;
+      animation-timing-function: cubic-bezier(0, 0, 0.79, 1);
     }
-    to {
-      -ms-transform: rotate(1080deg);
+    @-ms-keyframes spin {
+      from {
+        -ms-transform: rotate(0deg);
+      }
+      to {
+        -ms-transform: rotate(1080deg);
+      }
     }
-  }
-  @-moz-keyframes spin {
-    from {
-      -moz-transform: rotate(0deg);
+    @-moz-keyframes spin {
+      from {
+        -moz-transform: rotate(0deg);
+      }
+      to {
+        -moz-transform: rotate(1080deg);
+      }
     }
-    to {
-      -moz-transform: rotate(1080deg);
+    @-webkit-keyframes spin {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(1080deg);
+      }
     }
-  }
-  @-webkit-keyframes spin {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(1080deg);
-    }
-  }
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(1080deg);
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(1080deg);
+      }
     }
   }
 }
