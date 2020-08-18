@@ -20,19 +20,12 @@
 }
 
 .feed {
-  // position: relative;
-  // display: flex;
-  // justify-content: center;
-
-  // margin-top: 11rem;
-
   position: fixed;
   top: 150px;
   width: 100%;
 
   .topic__item {
     position: relative;
-    width: 250px;
     margin: 0 auto;
 
     width: 250px;
@@ -339,4 +332,28 @@
 }
 .white-fill {
   fill: $off-white;
+}
+
+@media screen and (max-width: 500px) {
+  #topic-section {
+    background: none;
+    background-color: #5e986a;
+  }
+
+  .feed {
+    top: 75px;
+  }
+
+  .spin-wheel--wrapper {
+    bottom: -200px;
+
+    .spin-wheel--container {
+      width: 300px;
+
+      svg {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
 }
