@@ -10,9 +10,11 @@ export default () => {
   const [isClicked, setAnim] = useState(false);
   const toggleAnim = () => {
     setAnim(!isClicked);
+    console.log(isClicked);
 
-    return setAnim(!isClicked);
-
+    return () => {
+      setAnim(!isClicked);
+    }
   };
 
   return (
@@ -36,7 +38,6 @@ export default () => {
       render={data => ( 
         <div>
           <section id="topic-section">
-          {/* <h1>Game of Life: Teachers Edition</h1> */}
             <div className='feed'>
             <ul className='topic__item--stack'>
               <li></li>

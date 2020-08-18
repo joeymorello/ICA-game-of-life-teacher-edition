@@ -1,3 +1,9 @@
-// Topic Card
-$card-bg-color: #fff8dc;
-// $border-dark: rgba($base-color, 0.88);
+// Color
+$off-white: #f2f2e8;
+$off-white--light: lighten($off-white, 10%);
+$off-white--dark: darken($off-white, 5%);
+$off-white--darker: darken($off-white, 10%);
+
+// Fonts
+$heading-font: "Libre Baskerville", serif;
+$p-font: "Source Sans Pro", sans-serif;

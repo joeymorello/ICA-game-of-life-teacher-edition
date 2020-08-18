@@ -1,3 +1,5 @@
+@import "../vars.scss";
+
 .quote-container {
   width: 450px;
   height: auto;
@@ -7,15 +9,28 @@
   left: 40px;
   bottom: 50px;
 
-  background-color: white;
+  background-color: $off-white;
   color: #333;
-  border-left: 4px #333 solid;
-  border-radius: 3px;
+  // border-left: 4px #333 solid;
+  border-radius: 5px;
   padding: 1rem;
 
-  h2 {
+  border-top: 5px solid;
+  border-image: linear-gradient(
+      to right,
+      #c8cc75 25%,
+      #e55a5a 25%,
+      #e55a5a 50%,
+      #9d61f2 50%,
+      #9d61f2 75%,
+      #4d4dad 75%
+    )
+    5;
+
+  p {
+    font-family: $heading-font;
     font-style: italic;
-    font-size: 1.25em;
+    font-weight: 700;
 
     -webkit-animation: fadeIn 1s ease-in-out 1;
     -moz-animation: fadeIn 1s ease-in-out 1;

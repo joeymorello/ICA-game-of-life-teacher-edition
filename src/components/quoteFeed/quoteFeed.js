@@ -39,7 +39,7 @@ export default () => {
         <div>
               {data.allContentfulQuote.edges.map((edge, index) => index === quoteIndex ? (
                   <div key={edge.node.id} className="quote-container">
-                    <h2>{edge.node.quote.quote}</h2>
+                    <p>{edge.node.quote.quote}</p>
                   </div> 
                 ) : null)}
                 {setQuoteIndex(getRandomQuoteIndexBetween(0, data.allContentfulQuote.edges.length - 1))}

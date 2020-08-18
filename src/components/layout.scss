@@ -1,3 +1,5 @@
+@import "./vars.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 html,
 body {
   font-size: 16px;
+  background-color: $off-white;
 }
 
 footer {
@@ -20,15 +23,15 @@ footer {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff8dc;
+  background: $off-white--dark;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #eae4c9;
+  background: $off-white--darker;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: $off-white--darker;
 }
