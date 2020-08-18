@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Game of Life: Teacher Edition`,
+    title: `Game of Teaching`,
     description: `An interactive website designed for new teachers to explore helpful topics and tips.`,
     author: `Illinois Classrooms In Action`,
   },
