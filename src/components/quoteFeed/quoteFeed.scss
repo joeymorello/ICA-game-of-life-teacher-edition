@@ -71,3 +71,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .quote-container {
+    display: none;
+  }
+}
