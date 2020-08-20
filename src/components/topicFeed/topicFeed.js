@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { graphql, navigate, StaticQuery } from 'gatsby'
 import './topicFeed.scss'
-import Quotes from "../../components/quoteFeed/quoteFeed"
 
 export default () => {
   const [cardIndex, setCardIndex] = useState(0)
@@ -36,35 +35,31 @@ export default () => {
           }
       `}
       render={data => ( 
-        <div>
-          <section id="topic-section">
-            <div className='feed'>
+        <section id="feed-section">
+          <div className="feed--container">
             <ul className='topic__item--stack'>
-              <li className='top-card--stack'></li>
+              <li className='topic__item--top-card'></li>
               <li></li>
               <li></li>
               <li></li>
               <li></li>
             </ul>
-
-              {data.allContentfulTopic.edges.map((edge, index) => index === cardIndex
-                ? (
-                    <div key={edge.node.id} className='topic__item draw-card--anim'>
-                      <h2 className='card__title'>{edge.node.cardTitle}</h2>
-                      <div className="card__desc--container">
-                        <p className='card__desc'>{edge.node.cardDescription.cardDescription}</p>
-                      </div>
-                      <div className='card__link' onClick={() => navigate(`/topic/${edge.node.slug}`)}>
-                        <p>Learn More</p>
-                      </div>
-                    </div>
-                ) : null)}
-            </div>
-            <div className="spin-wheel--wrapper">
+            {data.allContentfulTopic.edges.map((edge, index) => index === cardIndex
+            ? (
+                <div key={edge.node.id} className='topic__item draw-card--anim'>
+                  <h2 className='card__title'>{edge.node.cardTitle}</h2>
+                  <div className="card__desc--container">
+                    <p className='card__desc'>{edge.node.cardDescription.cardDescription}</p>
+                  </div>
+                  <div className='card__link' onClick={() => navigate(`/topic/${edge.node.slug}`)}>
+                    <p>Learn More</p>
+                  </div>
+                </div>
+              ) : null)}
               <div className="spin-wheel--container" onClick={toggleAnim}>
-                  <div className={isClicked ? 'spin-wheel--anim' : ''} onClick={() => setCardIndex(getRandomCardIndexBetween(0, data.allContentfulTopic.edges.length - 1))}>   
+                  <button className={isClicked ? 'spin-wheel--anim' : ''} onClick={() => setCardIndex(getRandomCardIndexBetween(0, data.allContentfulTopic.edges.length - 1))}>   
                       <svg xmlns="http://www.w3.org/2000/svg" id="spin-wheel" viewBox="0 0 401.1 401">
-                          <title>spin-wheel</title>
+                          <title>Click to spin</title>
                           <path id="space8" class="cls-1" d="M59 342l47.9-47.9C64.4 248.9 68.2 200.5 68.2 200.5L0.5 200.8S-3.2 281 59 342Z"/>
                           <path id="space6" class="cls-2" d="M342 59l-47.9 48C336.6 152.1 332.8 200.5 332.8 200.5l67.7-0.3S404.2 120 342 59Z"/>
                           <path id="space5" class="cls-3" d="M59 59l47.9 48C64.4 152.1 68.2 200.5 68.2 200.5L0.5 200.2S-3.2 120 59 59Z"/>
@@ -76,11 +71,10 @@ export default () => {
                           <circle class="cls-9" cx="200.5" cy="200.5" r="200"/>
                           <circle class="cls-9 white-fill" cx="200.5" cy="200.5" r="132.7"/>
                       </svg>
-                  </div>
+                  </button>
               </div>
-            </div>
-          </section>
-        </div>
+          </div>      
+        </section>
       )}
     />
   )
