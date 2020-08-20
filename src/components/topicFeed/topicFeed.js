@@ -11,9 +11,9 @@ export default () => {
     setAnim(!isClicked);
     console.log(isClicked);
 
-    return () => {
-      setAnim(!isClicked);
-    }
+    // return () => {
+    //   setAnim(!isClicked);
+    // }
   };
 
   return (
@@ -46,7 +46,7 @@ export default () => {
             </ul>
             {data.allContentfulTopic.edges.map((edge, index) => index === cardIndex
             ? (
-                <div key={edge.node.id} className='topic__item draw-card--anim'>
+                <div key={edge.node.id} className={isClicked ? 'draw-card--anim topic__item' : 'topic__item'} onAnimationEnd={() => setCardIndex(getRandomCardIndexBetween(0, data.allContentfulTopic.edges.length - 1))}>
                   <h2 className='card__title'>{edge.node.cardTitle}</h2>
                   <div className="card__desc--container">
                     <p className='card__desc'>{edge.node.cardDescription.cardDescription}</p>
@@ -56,8 +56,8 @@ export default () => {
                   </div>
                 </div>
               ) : null)}
-              <div className="spin-wheel--container" onClick={toggleAnim}>
-                  <button className={isClicked ? 'spin-wheel--anim' : ''} onClick={() => setCardIndex(getRandomCardIndexBetween(0, data.allContentfulTopic.edges.length - 1))}>   
+              <div className="spin-wheel--container">
+                  <button className={isClicked ? 'spin-wheel--anim' : null} onClick={toggleAnim} onAnimationEnd={toggleAnim}>   
                       <svg xmlns="http://www.w3.org/2000/svg" id="spin-wheel" viewBox="0 0 401.1 401">
                           <title>Click to spin</title>
                           <path id="space8" class="cls-1" d="M59 342l47.9-47.9C64.4 248.9 68.2 200.5 68.2 200.5L0.5 200.8S-3.2 281 59 342Z"/>
