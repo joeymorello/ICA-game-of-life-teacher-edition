@@ -9,11 +9,6 @@ export default () => {
   const [isClicked, setAnim] = useState(false);
   const toggleAnim = () => {
     setAnim(!isClicked);
-    console.log(isClicked);
-
-    // return () => {
-    //   setAnim(!isClicked);
-    // }
   };
 
   return (
