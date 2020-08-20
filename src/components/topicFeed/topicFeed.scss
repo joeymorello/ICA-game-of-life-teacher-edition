@@ -156,6 +156,15 @@
         height: 25rem;
         transition-duration: 2s;
 
+        // hides blue box when tapping spin wheel on moblie
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
         &:hover {
           cursor: pointer;
           -ms-transform: rotate(-8deg);
