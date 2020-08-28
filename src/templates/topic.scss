@@ -16,8 +16,8 @@
     font-family: $heading-font;
     font-weight: 700;
     text-align: center;
-    color: #f2f2e8;
-    text-shadow: 2px 2px 1px #333;
+    color: $off-white;
+    text-shadow: 2px 2px 1px $black;
   }
 }
 
@@ -28,7 +28,7 @@
   max-width: 960px;
   margin: 60px auto;
   padding: 0 10%;
-  color: #333;
+  color: $black;
   line-height: 1.6em;
   font-size: 1.25em;
   text-align: justify;

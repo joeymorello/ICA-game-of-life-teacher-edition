@@ -1,10 +1,33 @@
+//
 // Color
-$off-white: #f2f2e8;
+//
+$off-white: #f7f5e8;
 $off-white--light: lighten($off-white, 10%);
-$off-white--dark: darken($off-white, 5%);
-$off-white--darker: darken($off-white, 10%);
+$off-white--dark: darken($off-white, 3%);
+$off-white--darker: darken($off-white, 20%);
 $off-white--shadow: darken($off-white, 70%);
+// Green
+$green: rgb(72, 138, 104);
+$green--shadow: darken(rgba(72, 138, 104, 0.25), 40%);
+// Black
+$black: #444;
+$black--transp: rgba(51, 51, 51, 0.6);
+$black--light: lighten($black, 10%);
+$black--dark: darken($black, 10%);
 
+//
 // Fonts
+//
 $heading-font: "Libre Baskerville", serif;
 $p-font: "Source Sans Pro", sans-serif;
+
+//
+// Timing
+//
+$snap: cubic-bezier(0.75, 0, 0.175, 1);
+$spin-wheel: cubic-bezier(0, -0.01, 0.69, 1);
+
+//
+//Shadows
+//
+$component-shadow: 0px 0px 30px $green--shadow;

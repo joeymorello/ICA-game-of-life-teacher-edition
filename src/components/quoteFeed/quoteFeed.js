@@ -6,16 +6,16 @@ export default () => {
     const [quoteIndex, setQuoteIndex] = useState(0)
     const getRandomQuoteIndexBetween = (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + min
   
-    const [quote, getQuote] = useState(false);
+    const [quote, setQuote] = useState(false);
 
     useEffect(() => {
       const timer = setInterval(() => {
-        getQuote(!quote);
-      }, 5000);
+        setQuote(!quote);
+      }, 10000);
       // clearing interval
       return () => {
         clearInterval(timer);
-        getQuote(!quote);
+        setQuote(!quote);
       }
     });
 

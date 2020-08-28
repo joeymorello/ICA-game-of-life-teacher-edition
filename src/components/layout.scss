@@ -12,10 +12,17 @@ body {
 }
 
 footer {
+  padding: 1rem;
+  margin-top: 8rem;
+  line-height: 1.4em;
+  font-size: 1em;
+  font-family: $p-font;
   text-align: center;
-  margin: 1rem auto;
 }
 
+//
+// Scroll Bar
+//
 /* width */
 ::-webkit-scrollbar {
   width: 0.25em;
@@ -23,15 +30,15 @@ footer {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $off-white--dark;
+  background: #ccc;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $off-white--darker;
+  background: #777;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $off-white--darker;
+  background: #555;
 }

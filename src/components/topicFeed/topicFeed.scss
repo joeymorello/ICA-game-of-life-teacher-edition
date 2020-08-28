@@ -11,6 +11,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: $green;
 
   .feed--container {
     position: absolute;
@@ -30,10 +31,6 @@
       margin: 0 auto;
       list-style: none;
 
-      .topic__item--top-card {
-        background-image: url(../../images/card-bg.png);
-      }
-
       li {
         position: absolute;
         top: 40%;
@@ -52,6 +49,8 @@
           z-index: 6;
           top: 5px;
           margin-left: -2px;
+
+          background-image: url(../../images/card-bg.png);
         }
         &:nth-child(2) {
           z-index: 5;
@@ -72,6 +71,8 @@
           z-index: 2;
           top: 25px;
           margin-left: -10px;
+
+          box-shadow: $component-shadow;
         }
       }
     }
@@ -96,19 +97,19 @@
       .card__title {
         text-align: center;
         margin-bottom: 1rem;
-        color: #333;
+        color: $black;
         font-family: $heading-font;
       }
 
       .card__desc--container {
         width: 95%;
-        height: 70%;
+        height: 65%;
         overflow-y: scroll;
         padding: 0.4rem;
         text-align: left;
 
         .card__desc {
-          color: #333;
+          color: $black;
           line-height: 1.4em;
           font-size: 1.125em;
           font-family: $p-font;
@@ -116,17 +117,27 @@
       }
 
       .card__link {
+        border: 1.125px solid $black;
+        border-radius: 0.125em;
+        color: $black;
+        width: 45%;
+        // margin: 8px auto 0 auto;
+        margin: 15px auto;
+        -moz-transition: all 0.5s $snap;
+        -o-transition: all 0.5s $snap;
+        -webkit-transition: all 0.5s $snap;
+        transition: all 0.5s $snap;
+
         p {
-          margin-top: 0.5rem;
           text-align: center;
-          color: #333;
           font-family: $p-font;
           font-size: 1.125em;
           cursor: pointer;
+        }
 
-          &:hover {
-            text-decoration: underline;
-          }
+        &:hover {
+          color: $off-white;
+          background-color: #555;
         }
       }
     }
@@ -155,6 +166,9 @@
         width: 25rem;
         height: 25rem;
         transition-duration: 2s;
+
+        border-radius: 50%;
+        box-shadow: $component-shadow;
 
         // hides blue box when tapping spin wheel on moblie
         -webkit-touch-callout: none;
