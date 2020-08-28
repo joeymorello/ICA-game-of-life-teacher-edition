@@ -6,10 +6,7 @@ export default () => {
   const [cardIndex, setCardIndex] = useState(0)
   const getRandomCardIndexBetween = (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + min
 
-  const [isClicked, setAnim] = useState(false);
-  const toggleAnim = () => {
-    setAnim(!isClicked);
-  };
+  const [isClicked, setClicked] = useState(false);
 
   return (
     <StaticQuery
@@ -33,11 +30,11 @@ export default () => {
         <section id="feed-section">
           <div className="feed--container">
             <ul className='topic__item--stack'>
-              <li className='topic__item--top-card'></li>
+              <li className='stack--top-card'></li>
               <li></li>
               <li></li>
               <li></li>
-              <li></li>
+              <li className='stack--bottom-card'></li>
             </ul>
             {data.allContentfulTopic.edges.map((edge, index) => index === cardIndex
             ? (
@@ -52,7 +49,7 @@ export default () => {
                 </div>
               ) : null)}
               <div className="spin-wheel--container">
-                  <button className={isClicked ? 'spin-wheel--anim' : null} onClick={toggleAnim} onAnimationEnd={toggleAnim}>   
+                  <button className={isClicked && 'spin-wheel--anim'} onClick={() => setClicked(!isClicked)} onAnimationEnd={() => setClicked(!isClicked)}>   
                       <svg xmlns="http://www.w3.org/2000/svg" id="spin-wheel" viewBox="0 0 401.1 401">
                           <title>Click to spin</title>
                           <path id="space8" class="cls-1" d="M59 342l47.9-47.9C64.4 248.9 68.2 200.5 68.2 200.5L0.5 200.8S-3.2 281 59 342Z"/>
