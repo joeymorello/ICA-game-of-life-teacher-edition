@@ -96,6 +96,7 @@
 
       .card__title {
         text-align: center;
+        font-size: 1.125rem;
         margin-bottom: 1rem;
         color: $black;
         font-family: $heading-font;
@@ -111,7 +112,7 @@
         .card__desc {
           color: $black;
           line-height: 1.4em;
-          font-size: 1.125em;
+          font-size: 1rem;
           font-family: $p-font;
         }
       }
